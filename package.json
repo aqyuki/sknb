@@ -5,10 +5,10 @@
   "scripts": {
     "check": "run-p check:*",
     "check:prettier": "prettier --check ./",
-    "check:golang": "golangci-lint run --check ./",
+    "check:golang": "golangci-lint run ./...",
     "fix": "run-p fix:*",
     "fix:prettier": "prettier --write ./",
-    "fix:golang": "golangci-lint run --fix ./ && golangci-lint fmt ./"
+    "fix:golang": "golangci-lint run --fix ./... && golangci-lint fmt ./..."
   },
   "devDependencies": {
     "cz-git": "1.12.0",
