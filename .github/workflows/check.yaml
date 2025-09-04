@@ -1,0 +1,61 @@
+name: check
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    paths:
+      - '*.go'
+      - 'go.mod'
+      - 'go.sum'
+      - '.github/workflows/check.yaml'
+
+jobs:
+  gomod:
+    runs-on: 'ubuntu-24.04'
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - run: |
+          go mod tidy
+          if ! git diff --exit-code go.mod go.sum >/dev/null; then
+            echo "::error::`go.mod`/`go.sum`が更新されていません"
+            exit 1
+          fi
+
+  test:
+    runs-on: 'ubuntu-24.04'
+    needs: gomod
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - run: |
+          go test -v -shuffle=$GITHUB_RUN_ID ./...
+
+  lint:
+    runs-on: 'ubuntu-24.04'
+    needs: gomod
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - uses: marocchino/tool-versions-action@v1
+        id: tool-versions
+
+      - uses: golangci/golangci-lint-action@v8
+        with:
+          version: v${{ jobs.tool-versions.outputs.golangci-lint }}
