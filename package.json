@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.15.1",
+  "scripts": {
+    "check": "run-p check:*",
+    "check:prettier": "prettier --check ./",
+    "check:golang": "golangci-lint run --check ./",
+    "fix": "run-p fix:*",
+    "fix:prettier": "prettier --write ./",
+    "fix:golang": "golangci-lint run --fix ./ && golangci-lint fmt ./"
+  },
+  "devDependencies": {
+    "cz-git": "1.12.0",
+    "lefthook": "1.12.3",
+    "npm-run-all2": "8.0.4",
+    "prettier": "3.6.2"
+  }
+}
