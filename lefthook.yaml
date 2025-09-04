@@ -13,4 +13,4 @@ pre-commit:
     golangci-lint:
       glob:
         - '*.go'
-      run: 'golangci-lint run --diff {files}'
+      run: 'golangci-lint fmt --diff {files}'
