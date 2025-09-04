@@ -1,0 +1,16 @@
+pre-commit:
+  parallel: true
+  files: 'git diff --name-only --cached'
+  commands:
+    gitleaks:
+      run: 'gitleaks git --staged'
+    prettier:
+      glob:
+        - '*.json'
+        - '*.yaml'
+        - '*.js'
+      run: 'pnpm prettier --check {files}'
+    golangci-lint:
+      glob:
+        - '*.go'
+      run: 'golangci-lint run --diff {files}'
