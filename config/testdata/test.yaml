@@ -1,0 +1,22 @@
+###############################
+# env: 対応する環境変数名
+# type: Go内での型
+# require: 必須オプション
+# description: 説明
+###############################
+
+# アプリケーション全体の設定
+app:
+  # env: APP_ENV
+  # type: string
+  # require: false
+  # description:
+  #   実行環境 (local|test|prod)
+  env: test
+
+  # env: APP_LOG
+  # type: string
+  # require: false
+  # description:
+  #   ログレベルを設定 (debug|info|warn|error|dpanic|panic|fatal)
+  log: info
