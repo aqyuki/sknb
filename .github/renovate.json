@@ -4,5 +4,6 @@
     "config:recommended",
     ":semanticCommitTypeAll(chore)",
     "group:allNonMajor"
-  ]
+  ],
+  "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"]
 }
