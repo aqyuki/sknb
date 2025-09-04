@@ -1,0 +1,24 @@
+# dependencies
+/node_modules/
+
+# binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# tesat artifacts
+*.out
+coverage.*
+*.coverprofile
+profile.cov
+
+# go workspace
+go.work
+go.work.sum
+
+# secret files
+.env
+
