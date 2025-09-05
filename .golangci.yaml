@@ -5,6 +5,17 @@ linters:
     - staticcheck
     - govet
     - wsl_v5
+    - depguard
+  settings:
+    depguard:
+      rules:
+        errors:
+          files:
+            - $all
+          deny:
+            - pkg: errors
+              desc: github.com/cockroachdb/errorsを利用してください
+            - pkg: 'go.dev'
 formatters:
   enable:
     - goimports
