@@ -33,6 +33,10 @@ var defaultMap = map[string]any{
 	"app.log": "info",
 }
 
+func IsLocal() bool {
+	return runtimeEnv == EnvLocal
+}
+
 func LoadConfig() error {
 	env := Environment(os.Getenv("APP_ENV"))
 	if env == "" {
