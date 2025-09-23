@@ -7,6 +7,8 @@ import (
 	"github.com/rs/xid"
 )
 
+const defaultStatus = task.StatusToDo
+
 type CreateTaskInput struct {
 	UserID      string
 	Title       string
@@ -29,7 +31,7 @@ func (u *CreateTask) Invoke(ctx context.Context, input *CreateTaskInput) (*task.
 	body := &task.Body{
 		Title:       input.Title,
 		Description: input.Description,
-		Status:      task.StatusToDo,
+		Status:      defaultStatus,
 	}
 	draft := task.NewDraftTask(header, body)
 
