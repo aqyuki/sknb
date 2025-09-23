@@ -78,3 +78,80 @@ func (c *MockRepositoryCreateAndReturnCall) DoAndReturn(f func(context.Context, 
 	c.Call = c.Call.DoAndReturn(f)
 	return c
 }
+
+// FindByCodeForUpdate mocks base method.
+func (m *MockRepository) FindByCodeForUpdate(ctx context.Context, code int) (*Task, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindByCodeForUpdate", ctx, code)
+	ret0, _ := ret[0].(*Task)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindByCodeForUpdate indicates an expected call of FindByCodeForUpdate.
+func (mr *MockRepositoryMockRecorder) FindByCodeForUpdate(ctx, code any) *MockRepositoryFindByCodeForUpdateCall {
+	mr.mock.ctrl.T.Helper()
+	call := mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindByCodeForUpdate", reflect.TypeOf((*MockRepository)(nil).FindByCodeForUpdate), ctx, code)
+	return &MockRepositoryFindByCodeForUpdateCall{Call: call}
+}
+
+// MockRepositoryFindByCodeForUpdateCall wrap *gomock.Call
+type MockRepositoryFindByCodeForUpdateCall struct {
+	*gomock.Call
+}
+
+// Return rewrite *gomock.Call.Return
+func (c *MockRepositoryFindByCodeForUpdateCall) Return(arg0 *Task, arg1 error) *MockRepositoryFindByCodeForUpdateCall {
+	c.Call = c.Call.Return(arg0, arg1)
+	return c
+}
+
+// Do rewrite *gomock.Call.Do
+func (c *MockRepositoryFindByCodeForUpdateCall) Do(f func(context.Context, int) (*Task, error)) *MockRepositoryFindByCodeForUpdateCall {
+	c.Call = c.Call.Do(f)
+	return c
+}
+
+// DoAndReturn rewrite *gomock.Call.DoAndReturn
+func (c *MockRepositoryFindByCodeForUpdateCall) DoAndReturn(f func(context.Context, int) (*Task, error)) *MockRepositoryFindByCodeForUpdateCall {
+	c.Call = c.Call.DoAndReturn(f)
+	return c
+}
+
+// Save mocks base method.
+func (m *MockRepository) Save(ctx context.Context, task *Task) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Save", ctx, task)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// Save indicates an expected call of Save.
+func (mr *MockRepositoryMockRecorder) Save(ctx, task any) *MockRepositorySaveCall {
+	mr.mock.ctrl.T.Helper()
+	call := mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Save", reflect.TypeOf((*MockRepository)(nil).Save), ctx, task)
+	return &MockRepositorySaveCall{Call: call}
+}
+
+// MockRepositorySaveCall wrap *gomock.Call
+type MockRepositorySaveCall struct {
+	*gomock.Call
+}
+
+// Return rewrite *gomock.Call.Return
+func (c *MockRepositorySaveCall) Return(arg0 error) *MockRepositorySaveCall {
+	c.Call = c.Call.Return(arg0)
+	return c
+}
+
+// Do rewrite *gomock.Call.Do
+func (c *MockRepositorySaveCall) Do(f func(context.Context, *Task) error) *MockRepositorySaveCall {
+	c.Call = c.Call.Do(f)
+	return c
+}
+
+// DoAndReturn rewrite *gomock.Call.DoAndReturn
+func (c *MockRepositorySaveCall) DoAndReturn(f func(context.Context, *Task) error) *MockRepositorySaveCall {
+	c.Call = c.Call.DoAndReturn(f)
+	return c
+}

@@ -1,5 +1,9 @@
 package task
 
+import "github.com/cockroachdb/errors"
+
+var ErrTaskNotFound = errors.New("指定されたタスクが見つかりません")
+
 type Task struct {
 	*Header
 	*Body
