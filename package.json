@@ -1,0 +1,15 @@
+{
+  "name": "sknb",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.17.1",
+  "scripts": {
+    "check:prettier": "prettier --check ./",
+    "check:golangci-lint": "golangci-lint run ./...",
+    "fix:prettier": "prettier --write ./",
+    "fix:golangci-lint": "golangci-lint run --fix ./... && golangci-lint fmt --fix"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}
