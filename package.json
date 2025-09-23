@@ -7,7 +7,7 @@
     "check:prettier": "prettier --check ./",
     "check:golangci-lint": "golangci-lint run ./...",
     "fix:prettier": "prettier --write ./",
-    "fix:golangci-lint": "golangci-lint run --fix ./... && golangci-lint fmt --fix"
+    "fix:golangci-lint": "golangci-lint run --fix ./... && golangci-lint fmt ./..."
   },
   "devDependencies": {
     "prettier": "3.6.2"
