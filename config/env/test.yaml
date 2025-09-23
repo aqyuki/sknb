@@ -1,0 +1,24 @@
+##############################
+# env: 環境変数名
+# type: 型
+# require: 必須設定
+# description: 説明
+##############################
+
+# アプリケーション全体に関わる設定
+app:
+  # env: APP_ENV
+  # type: string
+  # require: false
+  # description:
+  #   アプリケーションの実行環境 (local|test|prod)
+  env: test
+
+  # ログに関わる設定
+  log:
+    # env: APP_LOG_LEVEL
+    # type: string
+    # require: false
+    # description:
+    #   ログレベル (debug|info|warn|error|fatal)
+    level: info
