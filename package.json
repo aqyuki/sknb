@@ -3,7 +3,11 @@
   "private": true,
   "type": "module",
   "packageManager": "pnpm@10.17.1",
-  "scripts": {},
-  "devDependencies": {},
-  "dependencies": {}
+  "scripts": {
+    "check:prettier": "prettier --check ./",
+    "fix:prettier": "prettier --write ./"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
 }
