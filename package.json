@@ -4,12 +4,15 @@
   "type": "module",
   "packageManager": "pnpm@10.17.1",
   "scripts": {
+    "check": "run-s check:*",
     "check:prettier": "prettier --check ./",
     "check:golangci-lint": "golangci-lint run ./...",
+    "fix": "run-s fix:*",
     "fix:prettier": "prettier --write ./",
     "fix:golangci-lint": "golangci-lint run --fix ./... && golangci-lint fmt ./..."
   },
   "devDependencies": {
+    "npm-run-all2": "8.0.4",
     "prettier": "3.6.2"
   }
 }
