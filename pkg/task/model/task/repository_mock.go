@@ -79,6 +79,45 @@ func (c *MockRepositoryCreateAndReturnCall) DoAndReturn(f func(context.Context, 
 	return c
 }
 
+// Find mocks base method.
+func (m *MockRepository) Find(ctx context.Context, query *Query) ([]*Task, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Find", ctx, query)
+	ret0, _ := ret[0].([]*Task)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// Find indicates an expected call of Find.
+func (mr *MockRepositoryMockRecorder) Find(ctx, query any) *MockRepositoryFindCall {
+	mr.mock.ctrl.T.Helper()
+	call := mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Find", reflect.TypeOf((*MockRepository)(nil).Find), ctx, query)
+	return &MockRepositoryFindCall{Call: call}
+}
+
+// MockRepositoryFindCall wrap *gomock.Call
+type MockRepositoryFindCall struct {
+	*gomock.Call
+}
+
+// Return rewrite *gomock.Call.Return
+func (c *MockRepositoryFindCall) Return(arg0 []*Task, arg1 error) *MockRepositoryFindCall {
+	c.Call = c.Call.Return(arg0, arg1)
+	return c
+}
+
+// Do rewrite *gomock.Call.Do
+func (c *MockRepositoryFindCall) Do(f func(context.Context, *Query) ([]*Task, error)) *MockRepositoryFindCall {
+	c.Call = c.Call.Do(f)
+	return c
+}
+
+// DoAndReturn rewrite *gomock.Call.DoAndReturn
+func (c *MockRepositoryFindCall) DoAndReturn(f func(context.Context, *Query) ([]*Task, error)) *MockRepositoryFindCall {
+	c.Call = c.Call.DoAndReturn(f)
+	return c
+}
+
 // FindByCode mocks base method.
 func (m *MockRepository) FindByCode(ctx context.Context, code int) (*Task, error) {
 	m.ctrl.T.Helper()
