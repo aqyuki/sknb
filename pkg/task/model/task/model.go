@@ -2,7 +2,10 @@ package task
 
 import "github.com/cockroachdb/errors"
 
-var ErrTaskNotFound = errors.New("指定されたタスクが見つかりません")
+var (
+	ErrTaskNotFound = errors.New("指定されたタスクが見つかりません")
+	ErrNoTaskOwner  = errors.New("タスクのオーナーではありません")
+)
 
 type Task struct {
 	*Header
