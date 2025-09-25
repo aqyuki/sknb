@@ -23,4 +23,5 @@ type Repository interface {
 	FindByCodeForUpdate(ctx context.Context, code int) (*Task, error)
 	CreateAndReturn(ctx context.Context, draft *DraftTask) (*Task, error)
 	Save(ctx context.Context, task *Task) error
+	Delete(ctx context.Context, id string) error
 }

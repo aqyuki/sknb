@@ -79,6 +79,44 @@ func (c *MockRepositoryCreateAndReturnCall) DoAndReturn(f func(context.Context, 
 	return c
 }
 
+// Delete mocks base method.
+func (m *MockRepository) Delete(ctx context.Context, id string) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Delete", ctx, id)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// Delete indicates an expected call of Delete.
+func (mr *MockRepositoryMockRecorder) Delete(ctx, id any) *MockRepositoryDeleteCall {
+	mr.mock.ctrl.T.Helper()
+	call := mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockRepository)(nil).Delete), ctx, id)
+	return &MockRepositoryDeleteCall{Call: call}
+}
+
+// MockRepositoryDeleteCall wrap *gomock.Call
+type MockRepositoryDeleteCall struct {
+	*gomock.Call
+}
+
+// Return rewrite *gomock.Call.Return
+func (c *MockRepositoryDeleteCall) Return(arg0 error) *MockRepositoryDeleteCall {
+	c.Call = c.Call.Return(arg0)
+	return c
+}
+
+// Do rewrite *gomock.Call.Do
+func (c *MockRepositoryDeleteCall) Do(f func(context.Context, string) error) *MockRepositoryDeleteCall {
+	c.Call = c.Call.Do(f)
+	return c
+}
+
+// DoAndReturn rewrite *gomock.Call.DoAndReturn
+func (c *MockRepositoryDeleteCall) DoAndReturn(f func(context.Context, string) error) *MockRepositoryDeleteCall {
+	c.Call = c.Call.DoAndReturn(f)
+	return c
+}
+
 // Find mocks base method.
 func (m *MockRepository) Find(ctx context.Context, query *Query) ([]*Task, error) {
 	m.ctrl.T.Helper()
