@@ -79,40 +79,40 @@ func (c *MockRepositoryCreateAndReturnCall) DoAndReturn(f func(context.Context, 
 	return c
 }
 
-// Delete mocks base method.
-func (m *MockRepository) Delete(ctx context.Context, id string) error {
+// DeleteByCode mocks base method.
+func (m *MockRepository) DeleteByCode(ctx context.Context, id string) error {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Delete", ctx, id)
+	ret := m.ctrl.Call(m, "DeleteByCode", ctx, id)
 	ret0, _ := ret[0].(error)
 	return ret0
 }
 
-// Delete indicates an expected call of Delete.
-func (mr *MockRepositoryMockRecorder) Delete(ctx, id any) *MockRepositoryDeleteCall {
+// DeleteByCode indicates an expected call of DeleteByCode.
+func (mr *MockRepositoryMockRecorder) DeleteByCode(ctx, id any) *MockRepositoryDeleteByCodeCall {
 	mr.mock.ctrl.T.Helper()
-	call := mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockRepository)(nil).Delete), ctx, id)
-	return &MockRepositoryDeleteCall{Call: call}
+	call := mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteByCode", reflect.TypeOf((*MockRepository)(nil).DeleteByCode), ctx, id)
+	return &MockRepositoryDeleteByCodeCall{Call: call}
 }
 
-// MockRepositoryDeleteCall wrap *gomock.Call
-type MockRepositoryDeleteCall struct {
+// MockRepositoryDeleteByCodeCall wrap *gomock.Call
+type MockRepositoryDeleteByCodeCall struct {
 	*gomock.Call
 }
 
 // Return rewrite *gomock.Call.Return
-func (c *MockRepositoryDeleteCall) Return(arg0 error) *MockRepositoryDeleteCall {
+func (c *MockRepositoryDeleteByCodeCall) Return(arg0 error) *MockRepositoryDeleteByCodeCall {
 	c.Call = c.Call.Return(arg0)
 	return c
 }
 
 // Do rewrite *gomock.Call.Do
-func (c *MockRepositoryDeleteCall) Do(f func(context.Context, string) error) *MockRepositoryDeleteCall {
+func (c *MockRepositoryDeleteByCodeCall) Do(f func(context.Context, string) error) *MockRepositoryDeleteByCodeCall {
 	c.Call = c.Call.Do(f)
 	return c
 }
 
 // DoAndReturn rewrite *gomock.Call.DoAndReturn
-func (c *MockRepositoryDeleteCall) DoAndReturn(f func(context.Context, string) error) *MockRepositoryDeleteCall {
+func (c *MockRepositoryDeleteByCodeCall) DoAndReturn(f func(context.Context, string) error) *MockRepositoryDeleteByCodeCall {
 	c.Call = c.Call.DoAndReturn(f)
 	return c
 }
